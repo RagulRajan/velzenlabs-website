@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Book Your Free AI Audit — Velzen Labs</title>
+<meta name="description" content="Book a free 20-minute AI automation audit. We'll identify 3 automation opportunities worth pursuing for your business."/>
+<link rel="icon" type="image/png" href="assets/logo-full.png"/>
+<link rel="canonical" href="https://velzenlabs.in/book-audit.html"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+html{scroll-behavior:smooth}
+*{font-family:'Inter',sans-serif}
+.mono{font-family:'JetBrains Mono',monospace}
+body{background:#0F0720;color:#FAFAFA;overflow-x:hidden;min-height:100vh}
+.gt{background:linear-gradient(135deg,#6366F1 0%,#8B5CF6 50%,#A78BFA 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.gb{background:linear-gradient(135deg,#6366F1 0%,#8B5CF6 50%,#A78BFA 100%)}
+.glass{background:rgba(109,40,217,0.15);border:1px solid rgba(139,92,246,0.25);backdrop-filter:blur(10px)}
+.btn-p{background:linear-gradient(135deg,#8B5CF6,#EC4899);box-shadow:0 10px 30px rgba(139,92,246,.35);transition:all .3s ease}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 15px 40px rgba(139,92,246,.5)}
+.btn-p:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:0 10px 30px rgba(139,92,246,.2)}
+.btn-o{background:rgba(255,255,255,.05);border:1px solid rgba(139,92,246,.4);transition:all .3s ease}
+.btn-o:hover{background:rgba(139,92,246,.15);border-color:rgba(167,139,250,.7)}
+.eb{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation:float 12s ease-in-out infinite}
+.orb-i{background:radial-gradient(circle,#6366F1,transparent 70%);opacity:.35}
+.orb-v{background:radial-gradient(circle,#8B5CF6,transparent 70%);opacity:.35}
+.orb-p{background:radial-gradient(circle,#EC4899,transparent 70%);opacity:.35}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
+.grid-bg{background-image:linear-gradient(rgba(139,92,246,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.05) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 40%,transparent 80%)}
+
+/* Form controls */
+.fld{position:relative}
+.fld label{display:block;font-size:13px;font-weight:600;color:#E9D5FF;margin-bottom:8px}
+.fld label .req{color:#F472B6;margin-left:3px}
+.fld input,.fld select,.fld textarea{
+  width:100%;
+  background:rgba(15,7,32,.6);
+  border:1px solid rgba(139,92,246,.3);
+  color:#FAFAFA;
+  padding:13px 15px;
+  border-radius:12px;
+  font-size:15px;
+  font-family:'Inter',sans-serif;
+  transition:all .2s ease;
+  outline:none;
+}
+.fld input::placeholder,.fld textarea::placeholder{color:rgba(230,220,255,.35)}
+.fld input:focus,.fld select:focus,.fld textarea:focus{
+  border-color:rgba(167,139,250,.8);
+  background:rgba(30,13,66,.7);
+  box-shadow:0 0 0 3px rgba(139,92,246,.15);
+}
+.fld input:hover,.fld select:hover,.fld textarea:hover{border-color:rgba(139,92,246,.5)}
+.fld select{appearance:none;background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3e%3cpath d='M1 1L6 6L11 1' stroke='%23A78BFA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+.fld select option{background:#1A0A36;color:#FAFAFA}
+.fld textarea{resize:vertical;min-height:100px}
+.fld.err input,.fld.err select,.fld.err textarea{border-color:#F472B6;box-shadow:0 0 0 3px rgba(244,114,182,.1)}
+.fld .hint{font-size:12px;color:rgba(230,220,255,.45);margin-top:6px}
+.fld .msg{font-size:12px;color:#F472B6;margin-top:6px;display:none}
+.fld.err .msg{display:block}
+
+/* Radio chips */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{cursor:pointer;position:relative}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;border:1px solid rgba(139,92,246,.3);background:rgba(15,7,32,.6);font-size:14px;font-weight:500;color:#E9D5FF;transition:all .2s ease}
+.chip:hover span{border-color:rgba(167,139,250,.6);background:rgba(30,13,66,.7)}
+.chip input:checked+span{background:linear-gradient(135deg,rgba(139,92,246,.35),rgba(236,72,153,.25));border-color:rgba(167,139,250,.9);color:white;box-shadow:0 0 0 3px rgba(139,92,246,.15)}
+
+/* Success card */
+.ok-card{display:none}
+.ok-card.show{display:block;animation:fadeUp .5s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-purple-950/60 border-b border-violet-500/20">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5 group" aria-label="Velzen Labs — home">
+      <img src="assets/logo-mark.png" alt="" style="height:34px;width:auto;filter:drop-shadow(0 0 18px rgba(167,139,250,0.45))"/>
+      <span class="font-black tracking-tight text-white text-[17px] leading-none">Velzen<span class="gt">Labs</span></span>
+    </a>
+    <a href="index.html" class="text-sm text-gray-300 hover:text-violet-300 transition flex items-center gap-2">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+      Back to home
+    </a>
+  </div>
+</nav>
+
+<!-- Form Section -->
+<section class="relative min-h-screen pt-28 lg:pt-32 pb-16 overflow-hidden">
+  <div class="absolute inset-0 grid-bg"></div>
+  <div class="orb orb-i w-[500px] h-[500px] -top-20 -left-40"></div>
+  <div class="orb orb-v w-[500px] h-[500px] top-40 right-0" style="animation-delay:-4s"></div>
+  <div class="orb orb-p w-80 h-80 bottom-0 left-1/3 opacity-30" style="animation-delay:-8s"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6">
+    <div class="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+
+      <!-- LEFT: Pitch -->
+      <div class="lg:col-span-2">
+        <div class="eb gt mb-5">Free AI Audit</div>
+        <h1 class="text-4xl md:text-5xl lg:text-[3.25rem] font-black leading-[1.08] mb-6">
+          Let's map out your <span class="gt">automation wins.</span>
+        </h1>
+        <p class="text-gray-400 text-lg leading-relaxed mb-8">
+          Tell us about your business. In a 20-minute call, we'll identify the top 3 processes you can automate — and show you the ROI.
+        </p>
+
+        <!-- What you get -->
+        <div class="space-y-4 mb-8">
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl gb flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-white mb-1">100% free · No commitment</div>
+              <div class="text-gray-400 text-sm leading-relaxed">We'll only suggest work that saves you real time and money.</div>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl gb flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-white mb-1">Delivered in 24–48 hours</div>
+              <div class="text-gray-400 text-sm leading-relaxed">You'll get a written audit after our call — ROI estimates included.</div>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl gb flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-white mb-1">Yours to keep</div>
+              <div class="text-gray-400 text-sm leading-relaxed">Even if you don't work with us, the audit is yours — no strings attached.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact fallback -->
+        <div class="glass rounded-xl p-5">
+          <div class="text-xs font-semibold uppercase tracking-widest text-violet-400 mb-2">Prefer WhatsApp?</div>
+          <a href="https://wa.me/919976229039?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20audit." class="flex items-center gap-3 text-white hover:text-violet-300 transition">
+            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <div>
+              <div class="font-semibold">+91 99762 29039</div>
+              <div class="font-semibold">+91 99422 84860</div>
+              <div class="text-sm text-gray-400">Send us a message</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="lg:col-span-3">
+        <div class="glass rounded-2xl p-6 md:p-8 lg:p-10">
+
+          <!-- FORM -->
+          <form id="auditForm" class="space-y-6" novalidate>
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+              <span class="text-xs font-semibold uppercase tracking-widest text-emerald-400">Takes 2 minutes</span>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-black mb-6">Tell us about your business</h2>
+
+            <div class="fld" data-field="service">
+              <label>What are you interested in?</label>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="service" value="AI Workflow Automation"/><span>AI Workflow Automation</span></label>
+                <label class="chip"><input type="radio" name="service" value="AI Voice Booking Agent"/><span>AI Voice Booking Agent</span></label>
+                <label class="chip"><input type="radio" name="service" value="Both"/><span>Both</span></label>
+                <label class="chip"><input type="radio" name="service" value="Not sure yet"/><span>Not sure yet</span></label>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-5">
+              <div class="fld" data-field="name">
+                <label for="f_name">Your name<span class="req">*</span></label>
+                <input type="text" id="f_name" name="name" placeholder="Rajesh Kumar" autocomplete="name"/>
+                <div class="msg">Please enter your name.</div>
+              </div>
+              <div class="fld" data-field="business">
+                <label for="f_business">Business name<span class="req">*</span></label>
+                <input type="text" id="f_business" name="business" placeholder="Kumar Jewellers" autocomplete="organization"/>
+                <div class="msg">Please enter your business name.</div>
+              </div>
+            </div>
+
+            <!-- Industry -->
+            <div class="fld" data-field="industry">
+              <label>Industry<span class="req">*</span></label>
+              <div class="chips" id="industryChips">
+                <label class="chip"><input type="radio" name="industry" value="Jewellery Retail"/><span>Jewellery</span></label>
+                <label class="chip"><input type="radio" name="industry" value="Hotel / Hospitality"/><span>Hotel</span></label>
+                <label class="chip"><input type="radio" name="industry" value="Manufacturing"/><span>Manufacturing</span></label>
+                <label class="chip"><input type="radio" name="industry" value="Healthcare"/><span>Healthcare</span></label>
+                <label class="chip"><input type="radio" name="industry" value="Financial Services"/><span>Finance</span></label>
+                <label class="chip"><input type="radio" name="industry" value="Education"/><span>Education</span></label>
+                <label class="chip"><input type="radio" name="industry" value="Other"/><span>Other</span></label>
+              </div>
+              <div class="msg">Please pick an industry.</div>
+            </div>
+
+            <!-- Phone + Email -->
+            <div class="grid md:grid-cols-2 gap-5">
+              <div class="fld" data-field="phone">
+                <label for="f_phone">WhatsApp number<span class="req">*</span></label>
+                <input type="tel" id="f_phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" inputmode="tel"/>
+                <div class="msg">Please enter a valid phone number.</div>
+              </div>
+              <div class="fld" data-field="email">
+                <label for="f_email">Email<span class="req">*</span></label>
+                <input type="email" id="f_email" name="email" placeholder="rajesh@business.com" autocomplete="email" inputmode="email"/>
+                <div class="msg">Please enter a valid email.</div>
+              </div>
+            </div>
+
+            <!-- Team size -->
+            <div class="fld" data-field="size">
+              <label for="f_size">Team size</label>
+              <select id="f_size" name="size">
+                <option value="">Select team size</option>
+                <option>Just me</option>
+                <option>2 – 5 people</option>
+                <option>6 – 20 people</option>
+                <option>21 – 50 people</option>
+                <option>50+ people</option>
+              </select>
+            </div>
+
+            <!-- Challenge -->
+            <div class="fld" data-field="challenge">
+              <label for="f_challenge">What's your biggest bottleneck?<span class="req">*</span></label>
+              <textarea id="f_challenge" name="challenge" placeholder="e.g., Following up with customers on WhatsApp, tracking stock, chasing payments, answering the same queries..."></textarea>
+              <div class="hint">A sentence or two is fine. We'll dig deeper on the call.</div>
+              <div class="msg">Please tell us a bit about your challenge.</div>
+            </div>
+
+            <!-- Preferred time -->
+            <div class="fld" data-field="time">
+              <label for="f_time">Best time to call</label>
+              <select id="f_time" name="time">
+                <option value="">Anytime works</option>
+                <option>Morning (9am – 12pm)</option>
+                <option>Afternoon (12pm – 4pm)</option>
+                <option>Evening (4pm – 8pm)</option>
+              </select>
+            </div>
+
+            <!-- Submit -->
+            <div class="pt-2">
+              <button type="submit" id="submitBtn" class="btn-p w-full px-8 py-4 rounded-full font-bold text-white text-base flex items-center justify-center gap-2">
+                <span id="submitText">Send via WhatsApp</span>
+                <svg id="submitIcon" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              </button>
+              <p class="text-center text-xs text-gray-500 mt-3">By submitting, you'll be redirected to WhatsApp to send your details to our team.</p>
+            </div>
+          </form>
+
+          <!-- SUCCESS STATE -->
+          <div id="okCard" class="ok-card text-center py-6">
+            <div class="w-20 h-20 rounded-full gb mx-auto mb-6 flex items-center justify-center" style="box-shadow:0 20px 50px rgba(139,92,246,.4)">
+              <svg class="w-10 h-10" fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black mb-4">Opening WhatsApp…</h2>
+            <p class="text-gray-400 text-lg mb-6 max-w-md mx-auto">We've opened WhatsApp with your details pre-filled. Just hit send and we'll get back to you within 2 hours.</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+              <a id="resendLink" href="#" class="btn-p inline-block px-7 py-3 rounded-full font-semibold text-white">Open WhatsApp again</a>
+              <a href="index.html" class="btn-o inline-block px-7 py-3 rounded-full font-semibold text-white">Back to home</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="relative py-8 border-t border-violet-500/10">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+    <div class="flex items-center gap-2">
+      <img src="assets/logo-mark.png" alt="" style="height:22px;width:auto;opacity:.8"/>
+      <span>© 2025 Velzen Labs. All rights reserved.</span>
+    </div>
+    <div class="flex items-center gap-6">
+      <a href="index.html" class="hover:text-violet-300 transition">Home</a>
+      <a href="index.html#process" class="hover:text-violet-300 transition">Process</a>
+      <a href="index.html#why" class="hover:text-violet-300 transition">Why Velzen</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const form = document.getElementById('auditForm');
+  const okCard = document.getElementById('okCard');
+  const resendLink = document.getElementById('resendLink');
+  const submitBtn = document.getElementById('submitBtn');
+  const submitText = document.getElementById('submitText');
+
+  // Field error helpers
+  function setErr(name, err){
+    const el = form.querySelector(`[data-field="${name}"]`);
+    if(el) el.classList.toggle('err', err);
+  }
+  function clearErrOn(name){
+    const fld = form.querySelector(`[data-field="${name}"]`);
+    if(!fld) return;
+    const inputs = fld.querySelectorAll('input, select, textarea');
+    inputs.forEach(i => {
+      const handler = () => fld.classList.remove('err');
+      i.addEventListener('input', handler);
+      i.addEventListener('change', handler);
+    });
+  }
+  ['name','business','industry','phone','email','challenge','size','time'].forEach(clearErrOn);
+
+  // Validate
+  function validate(){
+    let ok = true;
+    const get = id => (document.getElementById(id) || {}).value || '';
+
+    const name = get('f_name').trim();
+    if(name.length < 2){ setErr('name', true); ok = false; } else setErr('name', false);
+
+    const biz = get('f_business').trim();
+    if(biz.length < 2){ setErr('business', true); ok = false; } else setErr('business', false);
+
+    const industry = form.querySelector('input[name="industry"]:checked');
+    if(!industry){ setErr('industry', true); ok = false; } else setErr('industry', false);
+
+    const phone = get('f_phone').trim();
+    const phoneOk = /^[+\d][\d\s()-]{7,}$/.test(phone);
+    if(!phoneOk){ setErr('phone', true); ok = false; } else setErr('phone', false);
+
+    const email = get('f_email').trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if(!emailOk){ setErr('email', true); ok = false; } else setErr('email', false);
+
+    const challenge = get('f_challenge').trim();
+    if(challenge.length < 5){ setErr('challenge', true); ok = false; } else setErr('challenge', false);
+
+    return ok;
+  }
+
+  function buildMessage(){
+    const get = id => (document.getElementById(id) || {}).value || '';
+    const industry = form.querySelector('input[name="industry"]:checked');
+    const lines = [
+      "Hi Velzen Labs, I'd like to book a free audit.",
+      "",
+      "📋 *Audit Request*",
+      `• Name: ${get('f_name').trim()}`,
+      `• Business: ${get('f_business').trim()}`,
+      `• Service: ${(form.querySelector('input[name="service"]:checked') || {}).value || '—'}`,
+      `• Industry: ${industry ? industry.value : '—'}`,
+      `• Phone: ${get('f_phone').trim()}`,
+      `• Email: ${get('f_email').trim()}`,
+    ];
+    const size = get('f_size');
+    if(size) lines.push(`• Team size: ${size}`);
+    const time = get('f_time');
+    if(time) lines.push(`• Preferred time: ${time}`);
+    lines.push('', '💬 *Main challenge:*', get('f_challenge').trim());
+    return lines.join('\n');
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!validate()){
+      // scroll to first error
+      const firstErr = form.querySelector('.fld.err');
+      if(firstErr) firstErr.scrollIntoView({ behavior:'smooth', block:'center' });
+      return;
+    }
+    const msg = buildMessage();
+    const url = `https://wa.me/919976229039?text=${encodeURIComponent(msg)}`;
+    resendLink.href = url;
+
+    // Loading state
+    submitText.textContent = 'Opening WhatsApp…';
+    submitBtn.disabled = true;
+
+    // Swap to success state
+    setTimeout(() => {
+      form.style.display = 'none';
+      okCard.classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Open WhatsApp
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }, 600);
+  });
+
+  // Prefill from ?source= param (track where the click came from)
+  const params = new URLSearchParams(location.search);
+  const source = params.get('src');
+  if(source){
+    const track = document.createElement('input');
+    track.type = 'hidden';
+    track.name = '_source';
+    track.value = source;
+    form.appendChild(track);
+  }
+})();
+</script>
+
+</body>
+</html>
